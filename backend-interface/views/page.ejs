@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Главная страница</title>
+  </head>
+  <body>
+    <main class="max-w-5xl mx-auto my-5">
+      <h1 class="text-center mb-5 text-3xl font-semibold">Товары</h1>
+      <grid class="grid grid-cols-5 gap-4">
+        <% for(let i = 0; i < goods.length; i++) { %>
+        <div
+          class="py-4 px-2 border-3 border-orange-400 rounded-xl hover:-translate-y-2 transition"
+        >
+          <div class="flex flex-col gap-2">
+            <h2><%=goods[i].name %></h2>
+            <p><%=goods[i].price %>₽</p>
+            <p><%=goods[i].description %></p>
+            <h3>Категории:</h3>
+            <ul>
+              <% for(let j = 0; j < goods[i].categories.length; j++) { %>
+
+              <li><%= goods[i].categories[j] %></li>
+              <%}%>
+            </ul>
+          </div>
+        </div>
+        <%} %>
+      </grid>
+    </main>
+  </body>
+</html>
