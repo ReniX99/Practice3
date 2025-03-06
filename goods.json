@@ -1,1 +1,1 @@
-[{"name":"Товар 1","price":3500,"description":"Нет","categories":["Техника","Смартфоны"],"id":1}]
+[{"name":"Товар 2","price":3400,"description":"Нет","categories":["Техника","Ноутбки"],"id":2},{"name":"Товар 3","price":3300,"description":"Нет","categories":["Техника","Смартфоны","Ноутбуки","Аксессуары"],"id":3},{"name":"Товар 5","price":29000,"description":"Да","categories":["Аксессуары"],"id":4}]

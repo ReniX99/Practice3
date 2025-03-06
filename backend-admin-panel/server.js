@@ -1,6 +1,7 @@
 import express from 'express'
 import swaggerJsDoc from 'swagger-jsdoc'
 import swaggerUi from 'swagger-ui-express'
+import cors from 'cors'
 
 import fs from 'fs'
 
@@ -49,7 +50,7 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use(express.json())
-
+app.use(cors())
 
 app.get('/goods', (req, res) => {
   res.status(200).json(readFile(FILEPATH))
@@ -93,6 +94,7 @@ app.put('/goods/:id', (req, res) => {
     goods[goodIndex].name = changeGood.name
     goods[goodIndex].price = changeGood.price
     goods[goodIndex].description = changeGood.description
+    goods[goodIndex].categories = changeGood.categories
 
     writeFile(FILEPATH, goods)
     res.status(200).send()
